@@ -22,6 +22,15 @@ Una aplicación serverless completa que implementa operaciones CRUD usando servi
 ```
 [Frontend] → [API Gateway] → [Lambda Functions] → [DynamoDB]
 ```
+comandos:
+```
+* sam build
+* sam deploy --guided
+```
+al hacer modificaciones en el ymal solo:
+```
+sam deploy: actualiza solo los cambios 
+```
 ```
 crud-app/
 ├── functions/                 # Código de las funciones Lambda
@@ -51,3 +60,16 @@ Python 3.9+
 
 ## Ejemplo
 ![alt text](/img/image.png)
+
+
+# Nota:
+Para evitar cobros innecesarios borrar todo lo creado al momento de hacer deploy.
+
+```
+aws cloudformation delete-stack --stack-name NOMBRE_DEL_STACK
+aws s3 rm NAME-BUCKET --recursive
+aws s3 rb s3://NOMBRE_BUCKET
+```
+
+
+
